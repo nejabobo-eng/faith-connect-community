@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
+
+@import "tailwindcss";
+
+/* Base tweaks */
+html, body {
+  @apply bg-white;
+}
+
+a {
+  @apply underline underline-offset-2 hover:opacity-90;
+}
