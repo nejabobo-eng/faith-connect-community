@@ -21,7 +21,7 @@ export default function Footer() {
         <div>
           <h2 className="font-bold">Connect</h2>
           <ul className="mt-4 grid gap-3 text-sm text-white/65">
-            <li><a href="mailto:info@faithconnectcom.co.za" className="hover:text-gold-400">info@faithconnectcom.co.za</a></li>
+            <li><a href="mailto:info@faithconnectcommunity.co.za" className="hover:text-gold-400">info@faithconnectcommunity.co.za</a></li>
             <li><Link href="/contact" className="hover:text-gold-400">Contact & prayer</Link></li>
             <li><Link href="/donate" className="font-bold text-gold-400 hover:text-white">Partner with the mission</Link></li>
           </ul>
