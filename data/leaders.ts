@@ -25,10 +25,4 @@ export const leaders: Leader[] = [
 	bio:
 	  'Supports the Chairperson and assists in providing leadership, strategic planning, and oversight of the organization\'s activities.',
   },
-  {
-	name: 'Ayisha Khanyile',
-	title: 'Treasurer',
-	bio:
-	  'Oversees the financial affairs of Faith Connect Community, ensuring sound financial management, accountability, and transparency.',
-  },
 ]

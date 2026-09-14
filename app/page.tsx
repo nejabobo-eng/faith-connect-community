@@ -29,7 +29,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-md">
-            <div className="absolute -inset-5 rotate-3 rounded-[2.5rem] border border-gold-400/30" />
+            <div className="absolute -inset-3 rounded-[2.25rem] border border-gold-400/20" />
             <div className="relative overflow-hidden rounded-[2.25rem] bg-white p-8 text-center shadow-2xl sm:p-12">
               <img src="/logo.png" alt="Faith Connect Community — Connecting faith and purpose" className="mx-auto aspect-square w-full object-cover" />
               <p className="mt-2 font-display text-2xl font-bold text-navy-950">You are welcome here.</p>

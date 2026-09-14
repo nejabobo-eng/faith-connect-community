@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="max-w-md">
           <div className="flex items-center gap-3"><img src="/logo.png" alt="" className="h-14 w-14 rounded-full object-cover" /><p className="font-display text-xl font-bold">Faith Connect Community</p></div>
           <p className="mt-5 text-sm leading-7 text-white/65">A registered Non-Profit Company serving people through worship, discipleship, education, and community transformation.</p>
-          <p className="mt-4 text-xs font-bold uppercase tracking-[.18em] text-gold-400">Connecting faith and purpose</p>
+          <p className="mt-4 text-xs font-bold uppercase tracking-[.18em] text-gold-400">Building community through faith</p>
         </div>
         <div>
           <h2 className="font-bold">Explore</h2>
@@ -21,7 +21,7 @@ export default function Footer() {
         <div>
           <h2 className="font-bold">Connect</h2>
           <ul className="mt-4 grid gap-3 text-sm text-white/65">
-            <li><a href="mailto:info@faithconnect.community" className="hover:text-gold-400">info@faithconnect.community</a></li>
+            <li><a href="mailto:info@faithconnectcom.co.za" className="hover:text-gold-400">info@faithconnectcom.co.za</a></li>
             <li><Link href="/contact" className="hover:text-gold-400">Contact & prayer</Link></li>
             <li><Link href="/donate" className="font-bold text-gold-400 hover:text-white">Partner with the mission</Link></li>
           </ul>
