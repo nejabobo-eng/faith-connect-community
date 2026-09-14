@@ -1,56 +1,11 @@
-import Section from '@/components/ui/Section'
-import Card from '@/components/ui/Card'
+import type { Metadata } from 'next'
 import Link from 'next/link'
-
-export const metadata = {
-  title: 'Our Initiatives — Faith Connect Community',
-}
-
-export default function InitiativesPage() {
-  return (
-	<main>
-	  <Section className="text-center">
-		<h1 className="font-heading text-3xl font-bold text-faithBlue">Our Initiatives</h1>
-		<p className="mx-auto mt-2 max-w-3xl text-slate-700">
-		  Faith Connect Community advances the Gospel through Christ-centered ministry, education, and community service.
-		</p>
-	  </Section>
-
-	  <Section>
-		<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-		  <Card>
-			<h3 className="font-heading text-lg font-semibold text-faithBlue">EntrySafe Accounting Academy</h3>
-			<p className="mt-2 text-slate-700">
-			  An educational initiative dedicated to equipping individuals with practical accounting, bookkeeping,
-			  entrepreneurship, and financial management skills.
-			</p>
-			<div className="mt-4">
-			  <Link
-				href="#"
-				aria-disabled
-				className="inline-flex cursor-not-allowed items-center justify-center rounded-md bg-slate-200 px-4 py-2 font-semibold text-slate-500"
-			  >
-				Coming Soon — Learn More
-			  </Link>
-			</div>
-		  </Card>
-
-		  <Card>
-			<h3 className="font-heading text-lg font-semibold text-faithBlue">Community Development Projects</h3>
-			<p className="mt-2 text-slate-700">Targeted initiatives that bring practical help and hope to communities.</p>
-		  </Card>
-
-		  <Card>
-			<h3 className="font-heading text-lg font-semibold text-faithBlue">Leadership Development Programme</h3>
-			<p className="mt-2 text-slate-700">Equipping leaders to serve with Christ-like character and competence.</p>
-		  </Card>
-
-		  <Card>
-			<h3 className="font-heading text-lg font-semibold text-faithBlue">Future Digital Ministry</h3>
-			<p className="mt-2 text-slate-700">Building tools and resources to reach people online with the Gospel.</p>
-		  </Card>
-		</div>
-	  </Section>
-	</main>
-  )
-}
+import PageHero from '@/components/ui/PageHero'
+export const metadata: Metadata = { title: 'Initiatives', description: 'Explore Faith Connect Community initiatives in education, outreach, and leadership development.' }
+const initiatives = [
+  ['EntrySafe Accounting Academy', 'Practical accounting, bookkeeping, entrepreneurship, and financial management skills for students, entrepreneurs, churches, and nonprofits.', 'In development'],
+  ['Community development', 'Targeted projects that meet practical needs, strengthen families, and bring dignity and hope to local communities.', 'Growing'],
+  ['Leadership development', 'Equipping emerging leaders with Christ-like character, sound judgement, and the skills to serve well.', 'Growing'],
+  ['Digital ministry', 'Developing accessible resources and digital touchpoints that help more people encounter the Gospel.', 'Future initiative'],
+]
+export default function InitiativesPage() { return <main id="main-content"><PageHero eyebrow="Community impact" title="Compassion with a long-term view.">We pair the hope of the Gospel with initiatives that develop people, strengthen communities, and build sustainable opportunity.</PageHero><section className="bg-cream-50 py-20"><div className="page-shell grid gap-5 md:grid-cols-2">{initiatives.map(([title, body, status], i) => <article key={title} className="rounded-3xl bg-white p-8 ring-1 ring-slate-200"><div className="flex items-center justify-between gap-4"><span className="font-display text-3xl font-bold text-gold-500">0{i + 1}</span><span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">{status}</span></div><h2 className="mt-8 font-display text-2xl font-bold text-navy-950">{title}</h2><p className="mt-4 leading-7 text-slate-600">{body}</p></article>)}</div></section><section className="bg-gold-400 py-16 text-navy-950"><div className="page-shell flex flex-col gap-6 md:flex-row md:items-center md:justify-between"><div><h2 className="font-display text-3xl font-bold">Help these initiatives grow.</h2><p className="mt-2 max-w-xl">Partner through giving, prayer, professional skills, or practical service.</p></div><div className="flex gap-3"><Link href="/contact" className="rounded-full border border-navy-950 px-5 py-3 font-extrabold no-underline">Get involved</Link><Link href="/donate" className="rounded-full bg-navy-950 px-5 py-3 font-extrabold text-white no-underline">Donate</Link></div></div></section></main> }

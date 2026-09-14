@@ -1,49 +1,5 @@
-import Card from '@/components/ui/Card'
-import Section from '@/components/ui/Section'
+import type { Metadata } from 'next'
+import PageHero from '@/components/ui/PageHero'
 import { leaders } from '@/data/leaders'
-
-export const metadata = {
-  title: 'Leadership — Faith Connect Community',
-}
-
-export default function LeadershipPage() {
-  return (
-	<main>
-	  <Section className="text-center">
-		<h1 className="font-heading text-3xl font-bold text-faithBlue">Leadership</h1>
-		<p className="mx-auto mt-2 max-w-3xl text-slate-700">
-		  Meet the leaders serving the vision of Faith Connect Community with humility, integrity, and faith.
-		</p>
-	  </Section>
-
-	  <Section>
-		<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-		  {leaders.map((l) => (
-			<Card key={l.name}>
-			  <div className="flex flex-col items-center text-center">
-				{/* No photos per current guidance */}
-				<h3 className="mt-4 font-heading text-lg font-semibold text-faithBlue">{l.name}</h3>
-				<p className="text-sm text-slate-600">{l.title}</p>
-				<p className="mt-3 text-slate-700">{l.bio}</p>
-				{l.scripture && (
-				  <p className="mt-3 text-sm italic text-slate-500">Favorite Scripture: {l.scripture}</p>
-				)}
-			  </div>
-			</Card>
-		  ))}
-		</div>
-	  </Section>
-
-	  <Section>
-		<div className="rounded-lg bg-slate-50 p-6 ring-1 ring-slate-200">
-		  <p className="text-center text-slate-700">
-			<em>
-			  Faith Connect Community is governed by a Board of Directors committed to serving with integrity, accountability,
-			  and Christian values in accordance with the Constitution of the organization.
-			</em>
-		  </p>
-		</div>
-	  </Section>
-	</main>
-  )
-}
+export const metadata: Metadata = { title: 'Leadership', description: 'Meet the leaders serving Faith Connect Community with integrity and faith.' }
+export default function LeadershipPage() { return <main id="main-content"><PageHero eyebrow="Our leadership" title="Serving the vision with humility.">Our leaders provide spiritual care, sound governance, and faithful stewardship as Faith Connect Community grows.</PageHero><section className="bg-cream-50 py-20"><div className="page-shell grid gap-5 md:grid-cols-2">{leaders.map((leader, i) => <article key={leader.name} className="rounded-3xl bg-white p-8 ring-1 ring-slate-200"><span className="grid h-12 w-12 place-items-center rounded-full bg-navy-950 font-display font-bold text-gold-400">{String(i + 1).padStart(2, '0')}</span><h2 className="mt-7 font-display text-2xl font-bold text-navy-950">{leader.name}</h2><p className="mt-1 text-sm font-extrabold uppercase tracking-wider text-gold-500">{leader.title}</p><p className="mt-5 leading-7 text-slate-600">{leader.bio}</p></article>)}</div><p className="page-shell mt-10 max-w-3xl text-center text-sm leading-6 text-slate-500">Faith Connect Community is governed by a Board of Directors committed to integrity, accountability, Christian values, and the organisation’s governing documents.</p></section></main> }

@@ -7,7 +7,7 @@ export default function Hero() {
 		<img
 		  src="/logo.png"
 		  alt="Faith Connect Community"
-		  className="mx-auto h-auto w-36 sm:w-44 md:w-72"
+		  className="mx-auto h-auto w-40 sm:w-60 md:w-[320px] lg:w-[360px]"
 		/>
 		<h1 className="mt-6 font-heading text-3xl font-extrabold sm:text-4xl md:text-5xl">
 		  Connecting People to Christ. Building Faith. Transforming Communities.
@@ -18,7 +18,7 @@ export default function Hero() {
 		</p>
 		<div className="mt-8 flex flex-wrap items-center justify-center gap-3">
 		  <Button href="/about" variant="primary" className="text-slate-900">Join Us</Button>
-		  <Button href="/devotions" variant="secondary">Read Today&apos;s Devotion</Button>
+		  <Button href="/about" variant="secondary">Learn More</Button>
 		</div>
 	  </div>
 	</section>

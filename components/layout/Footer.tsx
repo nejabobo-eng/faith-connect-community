@@ -2,68 +2,32 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-	<footer className="mt-16 border-t border-slate-200 bg-slate-50/60">
-	  <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-10 sm:grid-cols-2 lg:grid-cols-4">
-		<div className="text-center lg:text-left">
-		  <img src="/logo.png" alt="Faith Connect Community" className="mx-auto h-auto w-24 lg:mx-0" />
-		  <h3 className="mt-3 font-heading text-lg font-semibold text-faithBlue">Faith Connect Community</h3>
-			<p className="mt-1 text-sm text-slate-600">Connecting People to Christ. Building Faith. Transforming Communities.</p>
-		  <p className="mt-2 text-xs text-slate-600">
-			Faith Connect Community is a registered Non-Profit Company (NPC) committed to glorifying God through worship,
-			discipleship, education, and community transformation.
-		  </p>
-		</div>
-
-		<div>
-		  <h4 className="font-heading text-sm font-semibold text-slate-900">Quick Links</h4>
-		  <ul className="mt-2 space-y-2 text-sm">
-			{[
-			  ['About', '/about'],
-			  ['Our Beliefs', '/beliefs'],
-			  ['Ministries', '/ministries'],
-			  ['Outreach', '/outreach'],
-			].map(([label, href]) => (
-			  <li key={href}>
-				<Link className="text-slate-700 hover:text-faithBlue" href={href as string}>
-				  {label}
-				</Link>
-			  </li>
-			))}
-		  </ul>
-		</div>
-
-		<div>
-		  <h4 className="font-heading text-sm font-semibold text-slate-900">Ministries</h4>
-		  <ul className="mt-2 space-y-2 text-sm">
-			{['Children', 'Youth', 'Women', 'Men', 'Prayer', 'Worship'].map((m) => (
-			  <li key={m} className="text-slate-700">{m} Ministry</li>
-			))}
-		  </ul>
-		</div>
-
-		<div>
-		  <h4 className="font-heading text-sm font-semibold text-slate-900">Contact</h4>
-		  <ul className="mt-2 space-y-2 text-sm text-slate-700">
-			<li>Email: info@faithconnect.community</li>
-			<li>Phone: +27 12 345 6789</li>
-			<li>WhatsApp: +27 12 345 6789</li>
-		  </ul>
-		  <div className="mt-3 flex gap-3 text-sm">
-			<Link href="/privacy" className="text-slate-600 hover:text-faithBlue">Privacy</Link>
-			<span className="text-slate-400">•</span>
-			<Link href="/terms" className="text-slate-600 hover:text-faithBlue">Terms</Link>
-		  </div>
-		</div>
-	  </div>
-
-	  <div className="bg-white/80">
-		<div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 text-xs text-slate-500">
-		  <p>
-			© {new Date().getFullYear()} Faith Connect Community NPC. All rights reserved.
-		  </p>
-		  <p className="font-scripture italic">“Micah 6:8”</p>
-		</div>
-	  </div>
-	</footer>
+    <footer className="bg-navy-950 text-white">
+      <div className="page-shell grid gap-10 py-14 md:grid-cols-[1.3fr_1fr_1fr]">
+        <div className="max-w-md">
+          <div className="flex items-center gap-3"><img src="/logo.png" alt="" className="h-14 w-14 rounded-full object-cover" /><p className="font-display text-xl font-bold">Faith Connect Community</p></div>
+          <p className="mt-5 text-sm leading-7 text-white/65">A registered Non-Profit Company serving people through worship, discipleship, education, and community transformation.</p>
+          <p className="mt-4 text-xs font-bold uppercase tracking-[.18em] text-gold-400">Connecting faith and purpose</p>
+        </div>
+        <div>
+          <h2 className="font-bold">Explore</h2>
+          <ul className="mt-4 grid gap-3 text-sm text-white/65">
+            <li><Link href="/about" className="hover:text-gold-400">Our story & beliefs</Link></li>
+            <li><Link href="/ministries" className="hover:text-gold-400">Ministries</Link></li>
+            <li><Link href="/initiatives" className="hover:text-gold-400">Community initiatives</Link></li>
+            <li><Link href="/leadership" className="hover:text-gold-400">Leadership</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="font-bold">Connect</h2>
+          <ul className="mt-4 grid gap-3 text-sm text-white/65">
+            <li><a href="mailto:info@faithconnect.community" className="hover:text-gold-400">info@faithconnect.community</a></li>
+            <li><Link href="/contact" className="hover:text-gold-400">Contact & prayer</Link></li>
+            <li><Link href="/donate" className="font-bold text-gold-400 hover:text-white">Partner with the mission</Link></li>
+          </ul>
+        </div>
+      </div>
+      <div className="border-t border-white/10"><div className="page-shell flex flex-col gap-3 py-5 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} Faith Connect Community NPC. All rights reserved.</p><div className="flex gap-5"><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link></div></div></div>
+    </footer>
   )
 }

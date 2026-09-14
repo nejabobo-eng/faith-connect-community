@@ -1,12 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
-
 @import "tailwindcss";
 
-/* Base tweaks */
-html, body {
-  @apply bg-white;
+@theme {
+  --color-navy-950: #07152f;
+  --color-navy-900: #0b2047;
+  --color-navy-800: #123364;
+  --color-gold-500: #dca626;
+  --color-gold-400: #efbf4d;
+  --color-cream-50: #fcfaf5;
+  --font-sans: "Aptos", "Segoe UI", Arial, sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
 }
 
-a {
-  @apply underline underline-offset-2 hover:opacity-90;
+html { scroll-behavior: smooth; }
+body { background: #fcfaf5; color: #172033; }
+* { border-color: #e5e7eb; }
+::selection { background: #efbf4d; color: #07152f; }
+
+a, button { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid #dca626; outline-offset: 3px; }
+
+.eyebrow {
+  color: #b17b08;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.page-shell { margin-inline: auto; max-width: 72rem; padding-inline: 1.25rem; }
+
+.soft-grid {
+  background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
