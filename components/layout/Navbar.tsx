@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 const links = [
   ['About', '/about'], ['Ministries', '/ministries'], ['Initiatives', '/initiatives'],
-  ['Books & Music', '/books-music'], ['Leadership', '/leadership'], ['Contact', '/contact'],
+  ['Books', '/books'], ['Music', '/music'], ['Leadership', '/leadership'], ['Contact', '/contact'],
 ]
 
 export default function Navbar() {

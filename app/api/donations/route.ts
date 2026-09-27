@@ -10,7 +10,7 @@ function getSiteUrl(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  const secretKey = process.env.YOCO_SECRET_KEY
+  const secretKey = process.env.YOCO_FAITH_CONNECT_SECRET_KEY
   if (!secretKey) {
     return NextResponse.json({ error: 'Online giving is not configured yet. Please use EFT or contact us.' }, { status: 503 })
   }

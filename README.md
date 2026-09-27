@@ -41,3 +41,12 @@ Optional EFT display variables are documented in `.env.example`. Leave any of th
 - Have the NPC review the privacy notice, website terms, refund approach, and donation wording.
 - Confirm the organisation’s SARS PBO/Section 18A status before offering tax-deductible receipts. The site currently makes no such promise.
 - Replace the square source logo with an optimised transparent mark when available for a sharper header treatment.
+
+## Separate payment accounts
+
+Use separate Yoco Checkout API keys in Vercel:
+
+- `YOCO_FAITH_CONNECT_SECRET_KEY` — Faith Connect Community NPC donations only.
+- `YOCO_MLU_SOLUTIONS_SECRET_KEY` — Mlu Solutions books and music sales only.
+
+Books and music are displayed by Faith Connect Community but sold and fulfilled by Mlu Solutions. Do not add paid PDFs or audio files under `public/`: those files are public to anyone who knows the URL. Before selling the first release, store the files in protected storage and connect a Yoco-verified webhook that releases a short-lived download link only after a successful payment.
