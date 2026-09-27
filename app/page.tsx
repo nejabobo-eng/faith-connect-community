@@ -58,6 +58,13 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-navy-950 py-20 text-white sm:py-24">
+        <div className="page-shell grid gap-10 lg:grid-cols-[1fr_.8fr] lg:items-center">
+          <div><p className="eyebrow text-gold-400">Creative works</p><h2 className="mt-4 max-w-2xl font-display text-4xl font-bold leading-tight sm:text-5xl">Stories and songs that speak to faith and purpose.</h2><p className="mt-5 max-w-2xl leading-8 text-white/70">Discover books and music created to encourage, inspire, and build community through faith.</p><Link href="/books-music" className="mt-8 inline-flex rounded-full bg-gold-400 px-6 py-3.5 font-extrabold text-navy-950 no-underline">Explore books & music</Link></div>
+          <div className="grid grid-cols-2 gap-4"><div className="rounded-3xl border border-white/15 bg-white/5 p-6"><p className="text-xs font-extrabold uppercase tracking-[.18em] text-gold-400">Written works</p><p className="mt-10 font-display text-2xl font-bold">Books</p></div><div className="mt-8 rounded-3xl bg-gold-400 p-6 text-navy-950"><p className="text-xs font-extrabold uppercase tracking-[.18em]">Sound & worship</p><p className="mt-10 font-display text-2xl font-bold">Music</p></div></div>
+        </div>
+      </section>
+
       <section className="bg-white py-20 sm:py-28">
         <div className="page-shell grid overflow-hidden rounded-[2rem] bg-navy-900 text-white lg:grid-cols-2">
           <div className="soft-grid p-8 sm:p-12 lg:p-16"><p className="eyebrow text-gold-400">A message from our founder</p><blockquote className="mt-6 font-display text-3xl font-bold leading-snug">“We seek to reflect God’s love in practical ways and leave a lasting impact for generations to come.”</blockquote><p className="mt-6 text-sm font-bold text-white/70">Pastor Mlungisi Mncube · Founder & Chairperson</p></div>
