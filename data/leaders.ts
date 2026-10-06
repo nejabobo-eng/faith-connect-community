@@ -24,7 +24,7 @@ export const leaders: Leader[] = [
   {
 	name: 'Pastor Bongumusa Clement Mavundla',
 	title: 'Deputy Chairperson',
-	photo: '/leaders/bongumusa-mavundla.jpg',
+	photo: '/leaders/bongumusa-mavundla-centred.png',
 	bio:
 	  'Supports the Chairperson and assists in providing leadership, strategic planning, and oversight of the organization\'s activities.',
   },
