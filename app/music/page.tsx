@@ -1,8 +1,22 @@
 import type { Metadata } from 'next'
 import PageHero from '@/components/ui/PageHero'
-import BuyButton from '@/components/store/BuyButton'
-import { songs } from '@/data/store'
 
-export const metadata: Metadata = { title: 'Music', description: 'Music releases available from Mlu Solutions, presented by Faith Connect Community.' }
+export const metadata: Metadata = {
+  title: 'Music',
+  description: 'Music and creative releases from Connect Network, a division of Mlu Solutions.',
+}
 
-export default function MusicPage() { return <main id="main-content"><PageHero eyebrow="Music" title="Songs that carry hope.">Music presented by Faith Connect Community and sold and fulfilled by Mlu Solutions.</PageHero><section className="bg-white py-20"><div className="page-shell"><p className="eyebrow">Available music</p><h2 className="mt-4 font-display text-4xl font-bold text-navy-950">Listen. Worship. Be encouraged.</h2>{songs.length ? <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{songs.map((song) => <article key={song.id} className="overflow-hidden rounded-3xl bg-cream-50 ring-1 ring-slate-200"><div className="flex aspect-square flex-col justify-between bg-navy-950 p-7 text-white">{song.coverImage ? <img src={song.coverImage} alt={`${song.title} cover`} className="absolute inset-0 h-full w-full object-cover" /> : <><span className="text-xs font-extrabold uppercase tracking-[.2em] text-gold-400">Mlu Solutions</span><p className="font-display text-3xl font-bold leading-tight">{song.title}</p><span className="text-sm font-bold text-white/70">Digital song</span></>}</div><div className="p-6"><h3 className="font-display text-2xl font-bold text-navy-950">{song.title}</h3>{song.creator && <p className="mt-2 text-sm font-semibold text-slate-500">{song.creator}</p>}<p className="mt-3 leading-7 text-slate-600">{song.description}</p><p className="mt-5 text-sm font-extrabold uppercase tracking-widest text-gold-500">R20 · Digital download</p><BuyButton itemId={song.id} kind="song" price="R20" /></div></article>)}</div> : <div className="mt-10 rounded-3xl border border-dashed border-gold-500/50 bg-cream-50 p-10 text-center"><p className="font-display text-2xl font-bold text-navy-950">Music will be available here soon.</p><p className="mx-auto mt-3 max-w-xl leading-7 text-slate-600">New songs and productions will be offered as secure paid downloads for R20 each.</p></div>}<p className="mt-8 text-center text-xs leading-5 text-slate-500">Music is sold and fulfilled by Mlu Solutions. Faith Connect Community NPC displays and promotes these works only.</p></div></section></main> }
+export default function MusicPage() {
+  return <main id="main-content">
+    <PageHero eyebrow="Music" title="Songs that carry hope.">Explore music created to bring encouragement, worship, and positive change into everyday life.</PageHero>
+    <section className="bg-white py-20">
+      <div className="page-shell max-w-4xl text-center">
+        <p className="eyebrow">Available through Connect Network</p>
+        <h2 className="mt-4 font-display text-4xl font-bold text-navy-950">Listen. Worship. Be encouraged.</h2>
+        <p className="mx-auto mt-6 max-w-2xl leading-7 text-slate-600">Music promoted by Faith Connect Community is available through Connect Network, a division of Mlu Solutions. Connect Network manages releases, checkout, and fulfilment.</p>
+        <a href="https://connectnetwork.co.za" target="_blank" rel="noopener noreferrer" className="mt-9 inline-flex rounded-full bg-navy-950 px-7 py-4 font-extrabold text-white no-underline shadow-lg transition hover:bg-navy-800">Visit Connect Network <span aria-hidden="true" className="ml-2">↗</span></a>
+        <p className="mt-8 text-sm leading-6 text-slate-500">Faith Connect Community NPC does not process music payments. Donations to Faith Connect are available separately on our <a href="/donate" className="font-bold text-navy-950 underline decoration-gold-400 decoration-2 underline-offset-4">Donate page</a>.</p>
+      </div>
+    </section>
+  </main>
+}

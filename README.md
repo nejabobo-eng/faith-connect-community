@@ -24,16 +24,20 @@ The donation flow creates a Yoco checkout session on the server and redirects do
 
 Yoco setup:
 
-1. Open and verify the organisation’s Yoco account, then add and verify the production domain in Yoco’s Checkout API settings.
-2. Add the sandbox `YOCO_SECRET_KEY` to local development and preview environments. It must not have a `NEXT_PUBLIC_` prefix.
+1. Open and verify Faith Connect Community NPC’s Yoco account, then add and verify the production domain in Yoco’s Checkout API settings.
+2. Add the sandbox `YOCO_FAITH_CONNECT_SECRET_KEY` to local development and preview environments. It must not have a `NEXT_PUBLIC_` prefix.
 3. Set `NEXT_PUBLIC_SITE_URL` to the exact HTTPS production domain.
 4. Test a low-value donation, cancellation, and Yoco confirmation using the test key.
-5. Replace `YOCO_SECRET_KEY` with Yoco’s live key in the production host only after Yoco unlocks the verified domain.
+5. Replace `YOCO_FAITH_CONNECT_SECRET_KEY` with Yoco’s live key in the production host only after Yoco unlocks the verified domain.
 6. Configure Yoco’s transaction notifications and reconcile gifts in the Yoco App. Add a verified webhook-backed donor record system only when the church adopts a secure donor database/CRM.
 
 Never place merchant keys, passphrases, webhook secrets, or API secret keys in a `NEXT_PUBLIC_*` variable. The application already creates checkout sessions from the server in `app/api/donations/route.ts`.
 
 Optional EFT display variables are documented in `.env.example`. Leave any of them blank to keep bank details off the public site and direct donors to email instead.
+
+## Books and music
+
+Faith Connect Community promotes selected books and music, but it does not sell or fulfil those products. Visitors are directed to Connect Network, a division of Mlu Solutions, for catalogue, checkout, and delivery. This website has no Mlu Solutions payment key or product-download endpoint.
 
 ## Before launch
 
@@ -41,12 +45,3 @@ Optional EFT display variables are documented in `.env.example`. Leave any of th
 - Have the NPC review the privacy notice, website terms, refund approach, and donation wording.
 - Confirm the organisation’s SARS PBO/Section 18A status before offering tax-deductible receipts. The site currently makes no such promise.
 - Replace the square source logo with an optimised transparent mark when available for a sharper header treatment.
-
-## Separate payment accounts
-
-Use separate Yoco Checkout API keys in Vercel:
-
-- `YOCO_FAITH_CONNECT_SECRET_KEY` — Faith Connect Community NPC donations only.
-- `YOCO_MLU_SOLUTIONS_SECRET_KEY` — Mlu Solutions books and music sales only.
-
-Books and music are displayed by Faith Connect Community but sold and fulfilled by Mlu Solutions. Do not add paid PDFs or audio files under `public/`: those files are public to anyone who knows the URL. Before selling the first release, store the files in protected storage and connect a Yoco-verified webhook that releases a short-lived download link only after a successful payment.

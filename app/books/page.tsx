@@ -1,8 +1,22 @@
 import type { Metadata } from 'next'
 import PageHero from '@/components/ui/PageHero'
-import BuyButton from '@/components/store/BuyButton'
-import { books } from '@/data/store'
 
-export const metadata: Metadata = { title: 'Books', description: 'Books available from Mlu Solutions, presented by Faith Connect Community.' }
+export const metadata: Metadata = {
+  title: 'Books',
+  description: 'Books and written works from Connect Network, a division of Mlu Solutions.',
+}
 
-export default function BooksPage() { return <main id="main-content"><PageHero eyebrow="Written works" title="Books that inspire faith and purpose.">Books presented by Faith Connect Community and sold and fulfilled by Mlu Solutions.</PageHero><section className="bg-cream-50 py-20"><div className="page-shell"><p className="eyebrow">Available books</p><h2 className="mt-4 font-display text-4xl font-bold text-navy-950">Read. Reflect. Grow.</h2>{books.length ? <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{books.map((book) => <article key={book.id} className="overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200"><div className="flex aspect-[4/5] flex-col justify-between bg-navy-950 p-7 text-white">{book.coverImage ? <img src={book.coverImage} alt={`${book.title} cover`} className="absolute inset-0 h-full w-full object-cover" /> : <><span className="text-xs font-extrabold uppercase tracking-[.2em] text-gold-400">Mlu Solutions</span><p className="font-display text-3xl font-bold leading-tight">{book.title}</p><span className="text-sm font-bold text-white/70">Digital book</span></>}</div><div className="p-6"><h3 className="font-display text-2xl font-bold text-navy-950">{book.title}</h3><p className="mt-3 leading-7 text-slate-600">{book.description}</p><p className="mt-5 text-sm font-extrabold uppercase tracking-widest text-gold-500">R100 · Digital download</p><BuyButton itemId={book.id} kind="book" price="R100" /></div></article>)}</div> : <div className="mt-10 rounded-3xl border border-dashed border-gold-500/50 bg-white p-10 text-center"><p className="font-display text-2xl font-bold text-navy-950">Books will be available here soon.</p><p className="mx-auto mt-3 max-w-xl leading-7 text-slate-600">New releases will be offered as secure paid downloads for R100 each.</p></div>}<p className="mt-8 text-center text-xs leading-5 text-slate-500">Books are sold and fulfilled by Mlu Solutions. Faith Connect Community NPC displays and promotes these works only.</p></div></section></main> }
+export default function BooksPage() {
+  return <main id="main-content">
+    <PageHero eyebrow="Written works" title="Books that inspire faith and purpose.">Discover books created to encourage faith, purpose, and positive change.</PageHero>
+    <section className="bg-cream-50 py-20">
+      <div className="page-shell max-w-4xl text-center">
+        <p className="eyebrow">Available through Connect Network</p>
+        <h2 className="mt-4 font-display text-4xl font-bold text-navy-950">Read. Reflect. Grow.</h2>
+        <p className="mx-auto mt-6 max-w-2xl leading-7 text-slate-600">Books promoted by Faith Connect Community are available to buy through Connect Network, a division of Mlu Solutions. Connect Network manages the catalogue, checkout, and delivery.</p>
+        <a href="https://connectnetwork.co.za" target="_blank" rel="noopener noreferrer" className="mt-9 inline-flex rounded-full bg-navy-950 px-7 py-4 font-extrabold text-white no-underline shadow-lg transition hover:bg-navy-800">Visit Connect Network <span aria-hidden="true" className="ml-2">↗</span></a>
+        <p className="mt-8 text-sm leading-6 text-slate-500">Faith Connect Community NPC does not process book payments. Donations to Faith Connect are available separately on our <a href="/donate" className="font-bold text-navy-950 underline decoration-gold-400 decoration-2 underline-offset-4">Donate page</a>.</p>
+      </div>
+    </section>
+  </main>
+}
